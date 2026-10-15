@@ -117,9 +117,12 @@ use Horde\Core\Service\OAuthTokenService;
 use Horde\Core\Service\PasswordServiceAuthorizationService;
 use Horde\Core\Service\PermissionService;
 use Horde\Core\Service\PrefsService;
+use Horde\Core\Service\ServiceAuthorizationService;
+use Horde\Core\Service\ServiceAuthorizationRepository;
 use Horde\Core\Service\ServiceCredentialManager;
 use Horde\Core\Service\OidcPreLogoutHandler;
 use Horde\Core\Service\PreLogoutHandlerInterface;
+use Horde\Core\Service\TokenGrantRepository;
 use Horde\Core\Service\VersionCheck\VersionService;
 use Horde\Core\Uri\RegistryRouteMapperProvider;
 use Horde\Core\Uri\RouteMapperProvider;
@@ -134,6 +137,9 @@ use Horde\Horde\Factory\AuthenticationServiceFactory;
 use Horde\Horde\Factory\OAuthHttpClientServiceFactory as BaseOAuthHttpClientServiceFactory;
 use Horde\Horde\Factory\OAuthTokenServiceFactory as BaseOAuthTokenServiceFactory;
 use Horde\Horde\Factory\OAuthTokenRepositoryFactory as BaseOAuthTokenRepositoryFactory;
+use Horde\Horde\Factory\ServiceAuthorizationServiceFactory as BaseServiceAuthorizationServiceFactory;
+use Horde\Horde\Factory\ServiceAuthorizationRepositoryFactory as BaseServiceAuthorizationRepositoryFactory;
+use Horde\Horde\Factory\TokenGrantRepositoryFactory as BaseTokenGrantRepositoryFactory;
 use Horde\Horde\Service\AuthenticationService;
 use Horde\Horde\Service\AuthLinkRepository;
 use Horde\Identity\IdentityHistoryRepository;
@@ -247,6 +253,9 @@ class DefaultInjectorBindings implements InjectorBindings
             OAuthTokenService::class => BaseOAuthTokenServiceFactory::class,
             OAuthTokenRepository::class => BaseOAuthTokenRepositoryFactory::class,
             OAuthHttpClientService::class => BaseOAuthHttpClientServiceFactory::class,
+            ServiceAuthorizationService::class => BaseServiceAuthorizationServiceFactory::class,
+            ServiceAuthorizationRepository::class => BaseServiceAuthorizationRepositoryFactory::class,
+            TokenGrantRepository::class => BaseTokenGrantRepositoryFactory::class,
             IdentityRepository::class => IdentityRepositoryFactory::class,
             IdentityHistoryRepository::class => IdentityHistoryRepositoryFactory::class,
             AuthLinkRepository::class => AuthLinkRepositoryFactory::class,

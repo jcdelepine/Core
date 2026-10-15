@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Horde\Core\Service;
 
+use Horde\OAuth\Client\OAuthFlowData;
 use Psr\Http\Message\UriInterface;
 
 interface ServiceAuthorizationService
